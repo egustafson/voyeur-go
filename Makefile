@@ -11,6 +11,7 @@ all: build test
 .PHONY: build
 build: voyeur/voyeur
 
+.PHONY: voyeur/voyeur  # force a rebuild always
 voyeur/voyeur:
 	( cd voyeur; go build ${GO_FLAGS} )
 
