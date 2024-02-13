@@ -1,8 +1,6 @@
-package main
+package cmd
 
 import (
-	"os"
-
 	"github.com/spf13/cobra"
 )
 
@@ -13,15 +11,6 @@ var rootCmd = &cobra.Command{
 }
 
 // flags initialized in flags.go
-
-func main() {
-	// this program uses Cobra (https://github.com/spf13/cobra)
-	err := Execute()
-	if err != nil {
-		// cobra will print an error to stdout/(?)err
-		os.Exit(1)
-	}
-}
 
 func Execute() error {
 	return rootCmd.Execute()

@@ -1,8 +1,8 @@
-package main
+package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/werks/voyeur-go/daemon"
+	"github.com/werks/voyeur-go/voyeurd"
 )
 
 var daemonCmd = &cobra.Command{
@@ -17,6 +17,6 @@ func init() {
 
 func doDaemon(cmd *cobra.Command, args []string) error {
 
-	err := daemon.Run()
+	err := voyeurd.Run()
 	return err
 }

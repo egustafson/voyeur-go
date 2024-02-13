@@ -1,4 +1,4 @@
-package main
+package cmd
 
 // flags for voyeur
 

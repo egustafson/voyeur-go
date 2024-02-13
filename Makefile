@@ -9,11 +9,11 @@ GO_FLAGS =
 all: build test
 
 .PHONY: build
-build: voyeur/voyeur
+build: voyeur-go
 
-.PHONY: voyeur/voyeur  # force a rebuild always
-voyeur/voyeur:
-	( cd voyeur; go build ${GO_FLAGS} )
+.PHONY: voyeur-go  # force a rebuild always
+voyeur-go:
+	go build ${GO_FLAGS}
 
 .PHONY: test
 test:
