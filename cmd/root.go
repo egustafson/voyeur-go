@@ -10,9 +10,16 @@ var rootCmd = &cobra.Command{
 	PersistentPreRunE: initAppHook,
 }
 
+var (
+	GitSummary string = ""
+	BuildDate  string = ""
+)
+
 // flags initialized in flags.go
 
-func Execute() error {
+func Execute(gitSummary, buildDate string) error {
+	GitSummary = gitSummary
+	BuildDate = buildDate
 	return rootCmd.Execute()
 }
 

@@ -23,7 +23,8 @@ func doAbout(cmd *cobra.Command, args []string) error {
 
 	// output is valid YAML
 	fmt.Println("---")
-	fmt.Println("voyeur-version: 0.0.0")
+	fmt.Printf("voyeur-version: %s\n", GitSummary)
+	fmt.Printf("build-date: %s\n", BuildDate)
 	fmt.Println("...")
 
 	return nil
