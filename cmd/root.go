@@ -5,7 +5,10 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:               "voyeur <sub-command>",
+	Use: "voyeur <sub-command>",
+	CompletionOptions: cobra.CompletionOptions{
+		DisableDefaultCmd: true,
+	},
 	Short:             "uber executable for voyeur",
 	PersistentPreRunE: initAppHook,
 }
