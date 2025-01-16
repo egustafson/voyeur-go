@@ -18,8 +18,7 @@ before:
     - go generate ./...
 
 builds:
-  - id: voyeur
-    binary: voyeur
+  - binary: voyeur
     env:
       - CGO_ENABLED=0
     goarch:
@@ -47,9 +46,13 @@ archives:
 nfpms:
   - vendor: Werks
     homepage: https://github.com/werks/voyeur-go
-    description: voyeur monitoring agent
+    description: |-
+      voyeur monitoring system
+    license: MIT
     formats:
       - deb
+    provides:
+      - voyeur
 
 changelog:
   sort: asc
