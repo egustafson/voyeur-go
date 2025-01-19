@@ -44,15 +44,26 @@ archives:
         format: zip
 
 nfpms:
-  - vendor: Werks
+  - vendor: Werks Software
     homepage: https://github.com/werks/voyeur-go
+    maintainer: Werks Software <maintainer@werks.io>
     description: |-
-      voyeur monitoring system
+      voyeur monitoring agent
     license: MIT
     formats:
       - deb
     provides:
       - voyeur
+    contents:
+      - src: init/voyeur.service
+        dst: /etc/systemd/system/voyeur.service
+        type: config
+      - src: configs/voyeur.yaml
+        dst: /etc/voyeur/voyeur.yaml
+        type: config|noreplace
+    scripts:
+      postinstall: scripts/postinstall.sh
+      preremove: scripts/preremove.sh
 
 changelog:
   sort: asc
